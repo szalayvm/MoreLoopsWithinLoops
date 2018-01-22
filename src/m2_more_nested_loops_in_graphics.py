@@ -52,12 +52,13 @@ def draw_upside_down_wall(rectangle, n, window):
     # Done: 2. Implement and test this function.
     #     Some tests are already written for you (above).
     # ------------------------------------------------------------------
+    rectangle.move_by(-1*rectangle.get_width(),1*rectangle.get_height())
     for n in range(n+1):
         for k in range(n):
             shift_1_x = rectangle.corner_1.x + (rectangle.get_width())*(n/2)
             shift_1_y = rectangle.corner_1.y - (rectangle.get_height())*(n)
             shift_2_x = rectangle.corner_2.x + (rectangle.get_width()) * (n/ 2)
-            shift_2_y = rectangle.corner_2.y - (rectangle.get_height()) * (n )
+            shift_2_y = rectangle.corner_2.y - (rectangle.get_height()) * (n)
             if k == 0:
                 new_rectangles = rg.Rectangle(rg.Point(shift_1_x,shift_1_y),rg.Point(shift_2_x,shift_2_y))
                 new_rectangles.attach_to(window)
